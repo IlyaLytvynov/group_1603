@@ -1,3 +1,15 @@
+$bgColor: green;
+
 body {
-  background: url(../../assets/images/image2@2x.jpg);
+  background-color: $bgColor;
+}
+
+.test {
+  background: aqua;
+  &__item {
+    border: 1px solid red;
+  }
+  &__child {
+    background: red;
+  }
 }
