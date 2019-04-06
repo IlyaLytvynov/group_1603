@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: rgb(106, 98, 210);
+}
+
+.log-in-form {
+    background-color: rgb(255, 255, 255);
+    width: 428px;
+    margin: 150px auto;
+    border-radius: 6px;
+    padding: 25px 45px;
+}
+
+.log-in-form__header {
+    margin: 0;
+    font-size: 20px;
+    text-align: center;
+    color: rgb(68, 68, 68);
+}
+
+.log-in-form__row {
+    margin: 20px 0;
+}
+
+.log-in-form__row:first-child {
+    margin: 0;
+}
+
+.log-in-form__field {
+    background-color: rgb(229, 233, 237);
+    width: 100%;
+    border: none;
+    border-radius: 2px;
+    font-size: 14px;
+    padding: 18px 22px;
+}
+
+.checkbox-wrapper {
+
+}
+
+.native-checkbox {
+    display: none;
+}
+
+.native-checkbox:checked + .checkbox {
+    background-color: red;
+}
+
+.checkbox {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid grey;
+    border-radius: 2px;
+}
+
+.log-in-form__btn {
+    background-color: rgb(116, 107, 222);
+    width: 100%;
+    color: rgb(255, 255, 255);
+    border: none;
+    font-size: 14px;
+    border-radius: 2px;
+    padding: 17px 0;
+}
+
+

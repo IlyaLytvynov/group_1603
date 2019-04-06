@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="./lesson_5.css">
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <section class="section-head">
+            <nav class="page-nav">
+                <div class="page-nav__item">
+                    <button class="page-nav__toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="logo">
+                        <span>
+                            autocryp
+                        </span>
+                    </div>
+                </div>
+                <ul class="page-menu">
+                    <li class="page-menu__item">
+                        <a href="" class="page-menu__link">
+                            <span>Benefint</span>
+                        </a>
+                    </li>
+                    <li class="page-menu__item">
+                        <a href="" class="page-menu__link">
+                            <span>Pricing</span>
+                        </a>
+                    </li>
+                    <li class="page-menu__item">
+                        <a href="" class="page-menu__link">
+                            <span>Testemonials</span>
+                        </a>
+                    </li>
+                    <li class="page-menu__item">
+                        <a href="" class="page-menu__link">
+                            <span>Client</span>
+                        </a>
+                    </li>
+                    <li class="page-menu__item">
+                        <a href="" class="page-menu__link">
+                            <span>Other ></span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="profile-controls">
+                    <button class="btn btn_trasparent">Login</button>
+                    <button class="btn btn_green">Register</button>
+                </div>
+            </nav>
+        </section>
+
+        <div class="parent">asdasdas</div>
+    </div>
+
+    <script>
+        const btn = document.querySelector('.page-nav__toggle');
+        const pageMenu = document.querySelector('.page-menu');
+        btn.addEventListener('click', () => {
+            pageMenu.classList.toggle('page-menu_active');
+        })
+    </script>
+</body>
+
+</html>
