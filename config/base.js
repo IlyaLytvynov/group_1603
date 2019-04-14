@@ -6,6 +6,7 @@ const baseConf = () => {
   const entry = {
     index: ['./src/index/index.js'],
     lesson_7: ['./src/lesson_7/lesson_7.js'],
+    lesson_9: ['./src/lesson_9/lesson_9.js'],
   };
 
   let plugins = Object.keys(entry).reduce((acc, name) => {
