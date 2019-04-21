@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="counter">Counter start</button>
+    <div class="test">Total SUM: <span id="output">0</span></div>
+
+    <div id="bulb1" onclick="toggleColor('#bulb1', 'red')">1</div>
+    <div id="bulb2" onclick="toggleColor('#bulb2', 'yellow')">2</div>
+
+    <script>
+        function toggleColor(helloWorld, someCoolColor) {
+            const colors = ['red', 'green', 'blue', 'aqua', 'magenta'];
+            const element = document.querySelector(helloWorld);
+            const colorIndex = Math.floor(Math.random() * colors.length);
+
+            if (element.style.backgroundColor === '') {
+                element.style.backgroundColor = colors[colorIndex];
+            } else {
+                element.style.backgroundColor = '';
+            }
+        }
+
+        function counter() {
+            let max = parseInt(prompt('Enter number'));
+
+            if (isNaN(max)) {
+                counter();
+            } else {
+                let sum = 0;
+                const output = document.querySelector('#output');
+                // output.textContent = 'HELLO WORLD';
+
+                for (let i = 0; i <= max; i++) {
+                    sum = sum + i;
+                }
+                output.textContent = sum;
+                output.style.backgroundColor = 'red';
+            }
+        }
+
+        const goods = ['Апельсины', 'Бананы'];
+        goods.push('Шланг');
+        console.log(goods);
+        goods.push('Мышь');
+        console.log(goods);
+        goods.push('Тапочки');
+        console.log(goods);
+
+        goods.pop();
+        console.log(goods);
+
+        for(let i = 0; i < goods.length; i++) {
+            console.log(goods[i]);
+        }
+
+    </script>
+</body>
+
+</html>
