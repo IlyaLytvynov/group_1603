@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<link href="lesson_11.css" rel="stylesheet"></head>
+
+<body>
+    <div class="lighter">
+        <div class="lighter__light lighter__light_red">1</div>
+        <div class="lighter__light lighter__light_yellow active">2</div>
+        <div class="lighter__light lighter__light_green">3</div>
+    </div>
+    <script>
+        const redLight = document.querySelector('.lighter__light_red');
+        const yellowLight = document.querySelector('.lighter__light_yellow');
+        const greenLight = document.querySelector('.lighter__light_green');
+        console.log(redLight, yellowLight, greenLight);
+
+        redLight.onclick = function () {
+            redLight.classList.add('active');
+            yellowLight.classList.remove('active');
+            greenLight.classList.remove('active');
+        };
+
+        yellowLight.onclick = function () {
+            yellowLight.classList.add('active');
+            redLight.classList.remove('active');
+            greenLight.classList.remove('active');
+        };
+
+        greenLight.onclick = function () {
+            greenLight.classList.add('active');
+            redLight.classList.remove('active');
+            yellowLight.classList.remove('active');
+        };
+
+
+        function sumOfPositive(numbers) {
+
+        }
+
+        sumOfPositive([-2, 3, 4, -20, 2]);
+    </script>
+<script type="text/javascript" src="lesson_11.js"></script></body>
+
+</html>

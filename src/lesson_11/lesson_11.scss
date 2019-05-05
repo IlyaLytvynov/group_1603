@@ -1,0 +1,39 @@
+.lighter {
+    width: 50px;
+    margin: 0 auto;
+    border: 1px solid grey;
+    &__light{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 1px solid grey;
+        margin: 20px auto;
+        text-align: center;
+        line-height: 40px;
+        &_red {
+            &.active {
+                background-color: red;
+            }
+        }
+        &_yellow {
+            &.active {
+                background-color: yellow;
+            }
+        }
+        &_green {
+            &.active {
+                background-color: green;
+            }
+        }
+    }
+}
+
+.toggler {
+    width: 200px;
+    display: flex;
+    &__lamp {
+        width: 80px;
+        height: 20px;
+        border: 1px solid grey;
+    }
+}
