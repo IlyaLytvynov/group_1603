@@ -4,7 +4,6 @@
 const webpack = require('webpack');
 
 const dev = (config, _path) => {
-  config.mode = 'development';
   config.output.path = _path;
   config.devServer = {
     contentBase: _path,

@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box; }
+.btn {
+  padding: 20px;
+  border: none;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.4); }
+  .btn_default {
+    background: grey; }
+  .btn_success {
+    background: greenyellow; }
+  .btn_active {
+    background: red; }
+
+.greet-widget__title {
+  display: none; }
+  .greet-widget__title_active {
+    display: inherit; }
+.list {
+  max-width: 450px;
+  margin: 0 auto;
+  border: 1px solid green;
+  padding: 1rem;
+  border-radius: 8px; }
+  .list__form {
+    border-bottom: 1px solid grey;
+    padding: 1rem 0; }
+  .list__input {
+    width: 100%;
+    font-size: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    border: none;
+    background: rgba(0, 0, 0, 0.1);
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.1); }
+    .list__input:focus {
+      border-color: blue; }
+  .list__item {
+    border-bottom: 1px solid grey;
+    padding: 1rem; }
