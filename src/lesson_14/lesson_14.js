@@ -1,5 +1,6 @@
 import './lesson_14.scss';
 import { dropDown } from './scrypts/dropdown';
+import { Game } from './scrypts/game';
 
 dropDown(
     document.querySelector('#dropDownCountries'),
@@ -10,23 +11,8 @@ dropDown(
     ['USD', 'CAD', 'EUR', 'UHR', 'GBP']
 );
 
-const greeting = function() {
-    console.log(this);
-    console.log(this.name);
-}
+const game = new Game();
 
-const user1 = {
-    name: 'Ilya',
-    age: 27,
-    greet: greeting
-};
-
-user1.greet();
-
-const user2 = {
-    name: 'John',
-    age: 35,
-    greet: greeting
-}
-
-user2.greet();
+// document.addEventListener('keydown', (e) => {
+//     console.log(e.code);
+// })

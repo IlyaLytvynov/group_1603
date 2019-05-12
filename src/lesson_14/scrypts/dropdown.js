@@ -13,6 +13,7 @@ function dropDown(parentNode, options) {
     }
 
     function toggle() {
+        this.classList.add('hello');
         if (isExpand) {
             close();
         } else {
