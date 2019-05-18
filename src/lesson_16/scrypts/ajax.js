@@ -26,6 +26,6 @@ export class Ajax {
               onSuccess(JSON.parse(xhr.response));
               xhr.onreadystatechange = undefined;
             }
-        });
+        };
     }
 }
