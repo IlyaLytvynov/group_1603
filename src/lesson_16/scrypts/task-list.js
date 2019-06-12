@@ -3,6 +3,8 @@ import { Ajax } from "./ajax";
 export class TaskList {
     constructor(rootElement) {
         this.rootElement = rootElement;
+        this.onSuccess = this.onSuccess.bind(this);
+        this.onError = this.onError.bind(this);
         this.fetchList();
         this.renderForm();
     }
@@ -24,7 +26,7 @@ export class TaskList {
     renderForm() {
         const form = document.createElement('form');
         const input = document.createElement('input');
-        
+
         input.placaholder = 'Enter task';
 
         form.appendChild(input);
@@ -38,19 +40,48 @@ export class TaskList {
     }
 
     sendData(title) {
-        const request = new Ajax('https://evening-dawn-11092.herokuapp.com/list');
-        request.post({title}, (resp) => {
-            this.options.push(resp);
-            const li = this.renderItem(resp);
-            this.list.appendChild(li);
-        });
+        const requestOptions = {
+            method: 'POST',
+            body: JSON.stringify({ title }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        };
+
+        fetch('https://evening-dawn-11092.herokuapp.com/list', requestOptions)
+            .then((response) => {
+                console.log(response);
+                return response.json()
+            })
+            .then((result) => {
+                this.list.appendChild(this.renderItem(result));
+            })
+            .catch((e) => {
+                debugger;
+                console.log('ERROR');
+            });
     }
 
+    onSuccess(result) {
+        console.log(result);
+        this.options = result;
+        this.renderList();
+    }
+
+    onError() {
+        alert('Something goes wrong!');
+    };
+
     fetchList() {
-        const request = new Ajax('https://evening-dawn-11092.herokuapp.com/list');
-        request.get((result) => {
-            this.options = result;
-            this.renderList();
-        });
+        fetch('https://evening-dawn-11092.herokuapp.com/list')
+            .then((response) => {
+                console.log(response);
+                return response.json()
+            })
+            .then(this.onSuccess)
+            .catch((e) => {
+                debugger;
+                console.log('ERROR');
+            });
     }
 }
