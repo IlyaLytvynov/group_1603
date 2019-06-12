@@ -257,13 +257,20 @@ var Game = exports.Game = function () {
     }, {
         key: 'render',
         value: function render() {
+            var _this2 = this;
+
             this.gameField = document.createElement('div');
+            this.button = document.createElement('button');
             this.gameField.classList.add('game');
             this.parent.appendChild(this.gameField);
+            this.parent.appendChild(this.button);
             console.log(this.gameField.offsetLeft);
+            this.button.textContent = 'Start Race';
+            this.button.addEventListener('click', function () {
+                _this2.startGame();
+            });
             var clientRect = this.gameField.getBoundingClientRect();
             this.finishCoordinates = Math.ceil(clientRect.right - 40);
-            console.log(this.finishCoordinates);
         }
     }, {
         key: 'renderCars',
@@ -278,27 +285,27 @@ var Game = exports.Game = function () {
     }, {
         key: 'startGame',
         value: function startGame() {
-            var _this2 = this;
+            var _this3 = this;
 
             this.intervalIds = [];
             this.cars.forEach(function (car, i) {
                 var interval = Math.ceil(Math.random() * 200);
-                _this2.intervalIds.push(_this2.moveCar(car, i, interval));
+                _this3.intervalIds.push(_this3.moveCar(car, i, interval));
             });
         }
     }, {
         key: 'moveCar',
         value: function moveCar(car, indexOfCar) {
-            var _this3 = this;
+            var _this4 = this;
 
             var timeInterval = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 100;
 
             return setInterval(function () {
-                if (car.coordinates.left <= _this3.finishCoordinates) {
+                if (car.coordinates.left <= _this4.finishCoordinates) {
                     car.moveForward();
                     console.log(car.coordinates.left);
                 } else {
-                    _this3.intervalIds.forEach(function (id) {
+                    _this4.intervalIds.forEach(function (id) {
                         clearInterval(id);
                     });
                     confirm('FINISHED: ' + indexOfCar);

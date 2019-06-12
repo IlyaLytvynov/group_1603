@@ -16,12 +16,17 @@ export class Game {
 
     render() {
         this.gameField = document.createElement('div');
+        this.button = document.createElement('button');
         this.gameField.classList.add('game');
         this.parent.appendChild(this.gameField);
+        this.parent.appendChild(this.button);
         console.log(this.gameField.offsetLeft);
+        this.button.textContent = 'Start Race';
+        this.button.addEventListener('click', () => {
+            this.startGame();
+        });
         const clientRect = this.gameField.getBoundingClientRect();
         this.finishCoordinates = Math.ceil(clientRect.right - 40);
-        console.log(this.finishCoordinates);
     }
 
     renderCars() {
